@@ -8,7 +8,7 @@ To design and develop a "Smart Journaling" application that empowers users to im
 
 These objectives represent the minimum viable product (MVP) required to deliver the core functionalities as outlined in the project specification.
 
-### User Authentication:
+### ✅User Authentication:
 
 - Implement a secure user registration and login system based on email and password.
 
@@ -30,7 +30,7 @@ These objectives represent the minimum viable product (MVP) required to deliver 
 
 - Ensure all data (entries, mood, weather) is saved correctly so it persists after the application is closed.
 
-### Dynamic UX Elements:
+### ✅Dynamic UX Elements:
 
 - Create a time-sensitive welcome message (Good Morning, Good Afternoon, Good Evening) based on the user's current time (GMT+8).
 
