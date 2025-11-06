@@ -18,6 +18,10 @@ public class User {
             System.out.print("Enter email: ");
             email = input.nextLine();
 
+            if (!email.contains("@")) {
+                System.out.println("Invaild input.");
+                return false;
+            }
             // 检查是否冲突
             while (inputStream.hasNextLine()) {
                 String currentLine = inputStream.nextLine();

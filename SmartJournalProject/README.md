@@ -34,12 +34,12 @@
 
     UserData.txt
 
-    s100201@student.fop 
-	Foo Bar 
-	pw-Stud#1 
-	s100202@student.fop 
-	John Doe 
-	pw-Stud#2 
+    s100201@student.fop
+	Foo Bar
+	pw-Stud#1
+	s100202@student.fop
+	John Doe
+	pw-Stud#2
 
 以上列表的格式为：电邮地址、显示名称、密码，以换行或 `\n` 分隔。复制并粘贴以上列表到 `UserData.txt` 文件中，这意味着该文件的内容应与上面显示的内容完全一致。
 
