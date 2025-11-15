@@ -7,8 +7,10 @@ import java.util.Scanner;
 
 public class User {
 
-    public String email, displayName;
+    private String email, password, displayName;
     public static Scanner input = new Scanner(System.in);
+
+
 
     boolean register() {
         
@@ -18,6 +20,10 @@ public class User {
             System.out.print("Enter email: ");
             email = input.nextLine();
 
+            if (!email.contains("@")) {
+                System.out.println("Invaild input.");
+                return false;
+            }
             // 检查是否冲突
             while (inputStream.hasNextLine()) {
                 String currentLine = inputStream.nextLine();
@@ -35,7 +41,7 @@ public class User {
             System.out.print("Enter password: ");
             String password = input.nextLine();
             outputStream.println(password);
-
+            inputStream.close();
             outputStream.close();
         } 
         catch (IOException e) {

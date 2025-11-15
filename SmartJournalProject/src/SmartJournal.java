@@ -8,6 +8,7 @@ public class SmartJournal {
     public static final Scanner input = new Scanner(System.in);
     public static final LocalDate today = now.toLocalDate();
     public static final User user = new User();
+    public static final Journal journal = new Journal();
 
     // 用户帐户和登录/注册页面
     public static void loginPage() {
@@ -51,7 +52,7 @@ public class SmartJournal {
             System.out.println("\nGood Morning! " + user.getDisplayName());
         }
         // 主要功能菜单
-        System.out.println("=== Main Menu ===");
+        System.out.println("\n=== Main Menu ===");
         System.out.println("1. Create Journals");
         System.out.println("2. View Weekly Mood Summary");
         System.out.println("3. Log Out");
@@ -59,8 +60,7 @@ public class SmartJournal {
 
         switch (input.nextLine()) {
             case "1":
-                //还在做 journalDatePage();
-                System.out.println("还没做……");
+                journalDatePage();
                 welcomePage();
                 break;
             case "2":
@@ -81,20 +81,16 @@ public class SmartJournal {
     // 选择日记时间页面
     public static void journalDatePage() {
 
-
-        System.out.println("=== Journal Dates ===");
-        int countJournal = 5; // 这里应该获取当前用户的日记篇数
-        for (int i = 1; i <= countJournal; i++) { 
-            System.out.println(i + ": " + today); // 应当为对应储存的日记日期
-        }
+        int countJournal = journal.datePage(user.getEmail());
+        int journalDateNum = 0;
         System.out.println("\nSelect a date to view journal, or create a new journal for today:");
         System.out.print("> ");
-        switch (input.nextLine()) {
-            case "1":
-                break;
-            default:
-                break;
-        }
+        do {
+            journalDateNum = input.nextInt();
+        } while (journalDateNum < 1 || journalDateNum > countJournal);
+
+        journal.journalPage(journalDateNum,user.getEmail());
+        
     }
     
     public static void journalEntryPage(String[] args) {
